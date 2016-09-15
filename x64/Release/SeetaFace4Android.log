@@ -1,0 +1,32 @@
+﻿生成启动时间为 9/15/2016 10:22:42 PM。
+     1>项目“E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\SeetaFace4Android.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"d:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /O2 /D WIN32 /D NDEBUG /D _CONSOLE /D USE_OPENMP /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /openmp /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt src\test\face_alignment_test.cpp
+         face_alignment_test.cpp
+     1>src\test\face_alignment_test.cpp(87): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>src\test\face_alignment_test.cpp(214): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>src\test\face_alignment_test.cpp(275): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.exe" /INCREMENTAL /NOLOGO /LIBPATH:"d:\Program Files (x86)\Visual Leak Detector\lib\Win64" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.lib" /MACHINE:X64 x64\Release\cfan.obj
+         x64\Release\lab_boosted_classifier.obj
+         x64\Release\mlp.obj
+         x64\Release\surf_mlp.obj
+         x64\Release\face_alignment.obj
+         x64\Release\face_detection.obj
+         x64\Release\lab_feature_map.obj
+         x64\Release\surf_feature_map.obj
+         x64\Release\fust.obj
+         x64\Release\lab_boost_model_reader.obj
+         x64\Release\surf_mlp_model_reader.obj
+         x64\Release\sift.obj
+         x64\Release\face_alignment_test.obj
+         x64\Release\image_pyramid.obj
+         x64\Release\nms.obj
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/OPT:ICF”规范)
+            正在创建库 E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.lib 和对象 E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.exp
+         SeetaFace4Android.vcxproj -> E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.exe
+     1>已完成生成项目“E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\SeetaFace4Android.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.68
