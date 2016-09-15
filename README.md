@@ -1,6 +1,6 @@
 #SeetaFace4Android
 
-[SeetaFace4Android](https://github.com/seetaface/SeetaFaceEngine)是山世光老师中科视拓(Seeta)旗下最新开源的人脸识别全流程解决方案，但是其检测和对齐模块并没有相应的工程。
+[SeetaFaceEngine](https://github.com/seetaface/SeetaFaceEngine)是山世光老师新创立的中科视拓(Seeta)旗下最新开源的人脸识别全流程解决方案，但是其检测和对齐模块并没有相应的工程，本项目是其对应的windows下VS2013工程。
 
 先来看下效果还是很不错的：
 
