@@ -12,6 +12,6 @@
 
 2.使用MATH_UTIL_BY_SIMD宏区分SSE指令，以增强跨平台的能力，目前改写了util下的math_func.h文件，但还有部分函数函数尚未完成转换，因此anroid版本尚未放出，敬请期待；
 
-3.从文件夹下读取测试图片，输入检测和对齐的结果。
+3.从文件夹下读取测试图片，输出检测和对齐的结果。
 
 完整工程请参见[SeetaFaceEngine-windows.rar](SeetaFaceEngine-windows.rar)

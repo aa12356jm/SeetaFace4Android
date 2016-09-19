@@ -28,7 +28,7 @@
  * Note: the above information must be kept whenever or wherever the codes are used.
  *
  */
-
+#include "mrutil.h"
 #include <cstdint>
 #include <fstream>
 #include <iostream>
@@ -39,6 +39,8 @@
 #include "face_detection.h"
 #define  SEETA_ALIGNMENT_LANDMARK 1
 #include "face_alignment.h"
+
+#define BOLD_DETECT_RECT 1
 
 class CSeetaFaceDetector
 {
@@ -79,7 +81,11 @@ public:
 			face_rect.y = faces[i].bbox.y;
 			face_rect.width = faces[i].bbox.width;
 			face_rect.height = faces[i].bbox.height;
+#if BOLD_DETECT_RECT
+			cv::rectangle(img_color, face_rect, CV_RGB(255, 0,0), 4, 1, 0);
+#else
 			cv::rectangle(img_color, face_rect, CV_RGB(0, 0, 255), 1, 1, 0);
+#endif
 			pfa->PointDetectLandmarks(image_data, faces[i], points);
 #if SEETA_ALIGNMENT_LANDMARK		
 			for (int i = 0; i < pts_num; i++)
@@ -87,6 +93,10 @@ public:
 				cv::circle(img_color, cv::Point(points[i].x, points[i].y), 2, CV_RGB(0, 255, 0), CV_FILLED);
 			}
 #endif
+			cv::putText(img_color, double2string(faces[i].score), cv::Point(face_rect.x, face_rect.y), 2, 1, CV_RGB(0, 255, 0));
+			cv::putText(img_color, double2string(faces[i].pitch), cv::Point(face_rect.x, face_rect.y+20), 2, 1, CV_RGB(0, 255, 0));
+			cv::putText(img_color, double2string(faces[i].yaw), cv::Point(face_rect.x, face_rect.y + 40), 2, 1, CV_RGB(0, 255, 0));
+			cv::putText(img_color, double2string(faces[i].roll), cv::Point(face_rect.x, face_rect.y + 60), 2, 1, CV_RGB(0, 255, 0));
 		}
 		return img_color;
 	}
@@ -94,10 +104,10 @@ private:
 	CSeetaFaceDetector()
 	{
 		pfd = new seeta::FaceDetection("seeta_fd_frontal_v1.0.bin");
-		pfd->SetMinFaceSize(20);
+		pfd->SetMinFaceSize(200);
 		pfd->SetScoreThresh(2.f);
 		pfd->SetImagePyramidScaleFactor(0.8f);
-		pfd->SetWindowStep(2, 2);
+		pfd->SetWindowStep(4, 4);
 #if SEETA_ALIGNMENT_LANDMARK
 		pfa=new seeta::FaceAlignment("seeta_fa_v1.0.bin");
 #endif
@@ -131,10 +141,12 @@ int fromdir(int argc, char** argv)
 	vector<string>files;
 	string datadir = "images";
 	getAllFilesinDir(datadir, files);
-	for (auto file : files)
+//#pragma omp parallel for
+	for (int i = 0; i < files.size();i++)
 	{
-		string filename = datadir + "/" + file;
-		string resultfilename = "results/" + file;
+		cout << files[i] << endl;
+		string filename = datadir + "/" + files[i];
+		string resultfilename = "results/" + files[i];
 		cv::Mat detected = CSeetaFaceDetector::getInstance()->detectSingleImage(cv::imread(filename));
 		cv::imwrite(resultfilename, detected);
 		cv::imshow("img", detected);
@@ -154,7 +166,11 @@ int fromvideo(int argc, char** argv)
 		{
 			return -1;
 		}
+		cv::TickMeter tm;
+		tm.start();
 		cv::Mat detected=CSeetaFaceDetector::getInstance()->detectSingleImage(img);
+		tm.stop();
+		cout << "cost " << tm.getTimeMilli() << "ms" << endl;
 		cv::imshow("img", detected);
 		cv::waitKey(1);
 	}
@@ -164,8 +180,8 @@ int fromvideo(int argc, char** argv)
 int main(int argc, char** argv)
 {
 //	fromimg(argc, argv);
-	fromdir(argc, argv);
-//	fromvideo(argc, argv);
+//	fromdir(argc, argv);
+	fromvideo(argc, argv);
 	return 0;
 }
 

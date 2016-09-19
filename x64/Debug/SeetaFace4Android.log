@@ -1,21 +1,13 @@
-﻿生成启动时间为 9/15/2016 9:27:17 PM。
+﻿生成启动时间为 9/19/2016 4:40:35 PM。
      1>项目“E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\SeetaFace4Android.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"d:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D USE_OPENMP /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /openmp /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt src\classifier\mlp.cpp src\classifier\surf_mlp.cpp src\feat\lab_feature_map.cpp src\feat\surf_feature_map.cpp src\fust.cpp src\io\surf_mlp_model_reader.cpp src\test\face_alignment_test.cpp
-         face_alignment_test.cpp
-     1>src\test\face_alignment_test.cpp(88): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-     1>src\test\face_alignment_test.cpp(196): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-     1>src\test\face_alignment_test.cpp(257): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-         正在生成代码...
-         正在编译...
-         mlp.cpp
-         正在生成代码...
-         正在编译...
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"d:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D USE_OPENMP /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /openmp /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt src\classifier\mlp.cpp src\classifier\surf_mlp.cpp src\feat\lab_feature_map.cpp src\feat\surf_feature_map.cpp src\fust.cpp src\io\surf_mlp_model_reader.cpp
          surf_mlp_model_reader.cpp
          fust.cpp
          surf_feature_map.cpp
          lab_feature_map.cpp
          surf_mlp.cpp
+         mlp.cpp
          正在生成代码...
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Debug\SeetaFace4Android.exe" /INCREMENTAL /NOLOGO /LIBPATH:"d:\Program Files (x86)\Visual Leak Detector\lib\Win64" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Debug\SeetaFace4Android.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Debug\SeetaFace4Android.lib" /MACHINE:X64 x64\Debug\cfan.obj
@@ -33,10 +25,9 @@
          x64\Debug\face_alignment_test.obj
          x64\Debug\image_pyramid.obj
          x64\Debug\nms.obj
-            正在创建库 E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Debug\SeetaFace4Android.lib 和对象 E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Debug\SeetaFace4Android.exp
          SeetaFace4Android.vcxproj -> E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Debug\SeetaFace4Android.exe
      1>已完成生成项目“E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\SeetaFace4Android.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:06.02
+已用时间 00:00:03.00
