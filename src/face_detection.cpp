@@ -30,7 +30,7 @@
  */
 
 #include "face_detection.h"
-#include "mropencv.h"
+
 #include <memory>
 #include <vector>
 
