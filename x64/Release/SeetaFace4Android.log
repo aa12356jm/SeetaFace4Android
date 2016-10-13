@@ -1,23 +1,15 @@
-﻿生成启动时间为 9/19/2016 10:10:16 PM。
+﻿生成启动时间为 10/13/2016 9:42:25 PM。
      1>项目“E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\SeetaFace4Android.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"d:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /O2 /D WIN32 /D NDEBUG /D _CONSOLE /D USE_OPENMP /D USE_SSE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /openmp /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt src\test\face_alignment_test.cpp
          face_alignment_test.cpp
-     1>src\test\face_alignment_test.cpp(93): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-     1>src\test\face_alignment_test.cpp(96): warning C4258: “i”: 忽略 For 循环中的定义；使用封闭范围中的定义
-                 src\test\face_alignment_test.cpp(91) : 忽略“i”的定义
-                 src\test\face_alignment_test.cpp(79) : 使用“i”的定义
-     1>src\test\face_alignment_test.cpp(97): warning C4258: “i”: 忽略 For 循环中的定义；使用封闭范围中的定义
-                 src\test\face_alignment_test.cpp(91) : 忽略“i”的定义
-                 src\test\face_alignment_test.cpp(79) : 使用“i”的定义
-     1>src\test\face_alignment_test.cpp(98): warning C4258: “i”: 忽略 For 循环中的定义；使用封闭范围中的定义
-                 src\test\face_alignment_test.cpp(91) : 忽略“i”的定义
-                 src\test\face_alignment_test.cpp(79) : 使用“i”的定义
-     1>src\test\face_alignment_test.cpp(99): warning C4258: “i”: 忽略 For 循环中的定义；使用封闭范围中的定义
-                 src\test\face_alignment_test.cpp(91) : 忽略“i”的定义
-                 src\test\face_alignment_test.cpp(79) : 使用“i”的定义
-     1>src\test\face_alignment_test.cpp(230): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-     1>src\test\face_alignment_test.cpp(291): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>src\test\face_alignment_test.cpp(100): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>src\test\face_alignment_test.cpp(103): warning C4258: “i”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 src\test\face_alignment_test.cpp(98) : 忽略“i”的定义
+                 src\test\face_alignment_test.cpp(86) : 使用“i”的定义
+     1>src\test\face_alignment_test.cpp(150): warning C4305: “初始化”: 从“double”到“float”截断
+     1>src\test\face_alignment_test.cpp(249): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+     1>src\test\face_alignment_test.cpp(310): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.exe" /INCREMENTAL /NOLOGO /LIBPATH:"d:\Program Files (x86)\Visual Leak Detector\lib\Win64" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Face\SeetaFaceEngine-windows\SeetaFace4Android\x64\Release\SeetaFace4Android.lib" /MACHINE:X64 x64\Release\cfan.obj
          x64\Release\lab_boosted_classifier.obj
@@ -41,4 +33,4 @@
 
 生成成功。
 
-已用时间 00:00:01.47
+已用时间 00:00:02.93

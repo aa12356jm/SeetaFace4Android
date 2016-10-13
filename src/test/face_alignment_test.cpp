@@ -42,6 +42,11 @@
 
 #define BOLD_DETECT_RECT 1
 
+string datadir = "images";
+string resultdir = "results";
+string notdetecteddir = "notdetected";
+int resultindex = 0;
+
 class CSeetaFaceDetector
 {
 public:
@@ -64,10 +69,12 @@ public:
 		image_data.num_channels = 1;
 		std::vector<seeta::FaceInfo> faces = pfd->Detect(image_data);
 		int32_t face_num = static_cast<int32_t>(faces.size());
-
+		resultindex++;
 		if (face_num == 0)
 		{
 			std::cout << "No Faces" << std::endl;
+			string notdetectedpath = notdetecteddir + "/" + int2string(resultindex) + ".jpg";
+			imwrite(notdetectedpath, img);
 			return img;
 		}
 #if SEETA_ALIGNMENT_LANDMARK
@@ -86,17 +93,17 @@ public:
 #else
 			cv::rectangle(img_color, face_rect, CV_RGB(0, 0, 255), 1, 1, 0);
 #endif
+#if SEETA_ALIGNMENT_LANDMARK	
 			pfa->PointDetectLandmarks(image_data, faces[i], points);
-#if SEETA_ALIGNMENT_LANDMARK		
 			for (int i = 0; i < pts_num; i++)
 			{
 				cv::circle(img_color, cv::Point(points[i].x, points[i].y), 2, CV_RGB(0, 255, 0), CV_FILLED);
 			}
 #endif
 			cv::putText(img_color, double2string(faces[i].score), cv::Point(face_rect.x, face_rect.y), 2, 1, CV_RGB(0, 255, 0));
-			cv::putText(img_color, double2string(faces[i].pitch), cv::Point(face_rect.x, face_rect.y+20), 2, 1, CV_RGB(0, 255, 0));
-			cv::putText(img_color, double2string(faces[i].yaw), cv::Point(face_rect.x, face_rect.y + 40), 2, 1, CV_RGB(0, 255, 0));
-			cv::putText(img_color, double2string(faces[i].roll), cv::Point(face_rect.x, face_rect.y + 60), 2, 1, CV_RGB(0, 255, 0));
+// 			cv::putText(img_color, double2string(faces[i].pitch), cv::Point(face_rect.x, face_rect.y+20), 2, 1, CV_RGB(0, 255, 0));
+// 			cv::putText(img_color, double2string(faces[i].yaw), cv::Point(face_rect.x, face_rect.y + 40), 2, 1, CV_RGB(0, 255, 0));
+// 			cv::putText(img_color, double2string(faces[i].roll), cv::Point(face_rect.x, face_rect.y + 60), 2, 1, CV_RGB(0, 255, 0));
 		}
 		return img_color;
 	}
@@ -136,18 +143,30 @@ int fromimg(int argc, char** argv)
 	return 0;
 }
 
+cv::Mat gammaCorrect(cv::Mat &img)
+{
+	cv::Mat X;
+	img.convertTo(X, CV_32FC1);
+	float gamma = 1 / 1.26;
+	cv::Mat I,ret;
+	pow(X, gamma, I);
+	cv::normalize(I, ret, 0, 255, cv::NORM_MINMAX, CV_8UC3);
+	return ret;
+}
+
 int fromdir(int argc, char** argv)
 {
 	vector<string>files;
-	string datadir = "images";
 	getAllFilesinDir(datadir, files);
 //#pragma omp parallel for
 	for (int i = 0; i < files.size();i++)
 	{
 		cout << files[i] << endl;
 		string filename = datadir + "/" + files[i];
-		string resultfilename = "results/" + files[i];
-		cv::Mat detected = CSeetaFaceDetector::getInstance()->detectSingleImage(cv::imread(filename));
+		string resultfilename = resultdir+"/" + files[i];
+		cv::Mat img = cv::imread(filename);
+		img = gammaCorrect(img);
+		cv::Mat detected = CSeetaFaceDetector::getInstance()->detectSingleImage(img);
 		cv::imwrite(resultfilename, detected);
 		cv::imshow("img", detected);
 		cv::waitKey(1);

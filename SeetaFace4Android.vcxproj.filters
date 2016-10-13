@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\test\face_alignment_test.cpp" />
+    <ClCompile Include="src\cfan.cpp">
+      <Filter>FaceAlignment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\face_alignment.cpp">
+      <Filter>FaceAlignment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\face_detection.cpp">
+      <Filter>FaceDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fust.cpp">
+      <Filter>FaceDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\nms.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\image_pyramid.cpp">
+      <Filter>Feature</Filter>
+    </ClCompile>
+    <ClCompile Include="src\io\lab_boost_model_reader.cpp">
+      <Filter>Feature</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classifier\lab_boosted_classifier.cpp">
+      <Filter>Feature</Filter>
+    </ClCompile>
+    <ClCompile Include="src\feat\lab_feature_map.cpp">
+      <Filter>Feature</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sift.cpp">
+      <Filter>Feature</Filter>
+    </ClCompile>
+    <ClCompile Include="src\feat\surf_feature_map.cpp">
+      <Filter>Feature</Filter>
+    </ClCompile>
+    <ClCompile Include="src\io\surf_mlp_model_reader.cpp">
+      <Filter>Feature</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classifier\mlp.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classifier\surf_mlp.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cfan.h">
+      <Filter>FaceAlignment</Filter>
+    </ClInclude>
+    <ClInclude Include="include\face_alignment.h">
+      <Filter>FaceAlignment</Filter>
+    </ClInclude>
+    <ClInclude Include="include\face_detection.h">
+      <Filter>FaceDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="include\common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\math_func.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\nms.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\image_pyramid.h">
+      <Filter>Feature</Filter>
+    </ClInclude>
+    <ClInclude Include="include\io\lab_boost_model_reader.h">
+      <Filter>Feature</Filter>
+    </ClInclude>
+    <ClInclude Include="include\classifier\lab_boosted_classifier.h">
+      <Filter>Feature</Filter>
+    </ClInclude>
+    <ClInclude Include="include\feat\lab_feature_map.h">
+      <Filter>Feature</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sift.h">
+      <Filter>Feature</Filter>
+    </ClInclude>
+    <ClInclude Include="include\feat\surf_feature_map.h">
+      <Filter>Feature</Filter>
+    </ClInclude>
+    <ClInclude Include="include\io\surf_mlp_model_reader.h">
+      <Filter>Feature</Filter>
+    </ClInclude>
+    <ClInclude Include="include\classifier\mlp.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\classifier\surf_mlp.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="FaceDetection">
+      <UniqueIdentifier>{54be6320-03f4-469d-97de-9c7cc2d1ddfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FaceAlignment">
+      <UniqueIdentifier>{787057a8-a7bc-4615-8707-838469fc4bac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{0f6dd13a-d037-425c-b8fa-37011a3660ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Feature">
+      <UniqueIdentifier>{1090d394-0f2e-49d0-b929-da449ebb3b61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
